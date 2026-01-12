@@ -1,6 +1,6 @@
 # Behavior Rules Format Documentation
 
-The behavior detection rules are organized into 3 data source files containing lists of behavior names.
+The behavior detection rules are organized into 3 data source files containing lists of behavior names and titles.
 
 ## File Structure
 
@@ -20,8 +20,10 @@ title: string
 description: string
 totalBehaviors: number
 behaviors:
-  - string
-  - string
+  - behavior: string
+    title: string
+  - behavior: string
+    title: string
   - ...
 ```
 
@@ -48,9 +50,24 @@ behaviors:
 - **Example**: `184`
 
 ### behaviors
-- **Type**: Array of strings
-- **Description**: Alphabetically sorted list of behavior names
-- **Example**: `["BehaviorAccessKeyCredentialManagement", "BehaviorAnonymousS3Burst", ...]`
+- **Type**: Array of objects
+- **Description**: Alphabetically sorted list of behavior objects containing behavior name and title
+- **Structure**:
+  ```yaml
+  behaviors:
+    - behavior: string
+      title: string
+  ```
+
+#### behavior
+- **Type**: String
+- **Description**: Unique behavior identifier
+- **Example**: `BehaviorAccessKeyCredentialManagement`
+
+#### title
+- **Type**: String
+- **Description**: Human-readable descriptive title for the behavior
+- **Example**: `IAM Principal Access Key And Service-Specific Credential Management Activity`
 
 ## Example Complete File
 
@@ -60,21 +77,30 @@ title: AWS CloudTrail Behaviors
 description: List of behavior detection rules for AWS CloudTrail data source
 totalBehaviors: 184
 behaviors:
-- BehaviorAccessKeyCredentialManagement
-- BehaviorAnonymousS3Burst
-- BehaviorAssumedRoleAccountAudit
-- BehaviorCloudCidrAllocation
-- BehaviorCredentialReportRetrieval
-- BehaviorEC2ReservationModification
-- BehaviorEbsEncryptionToggle
-- BehaviorEbsSnapshotPermissionAudit
-# ... (continues with all behavior names)
+- behavior: BehaviorAccessKeyCredentialManagement
+  title: IAM Principal Access Key And Service-Specific Credential Management Activity
+- behavior: BehaviorAccessKeyEnumeration
+  title: Credential Access – IAM Access Key Last-Used Enumeration Across Multiple Access Keys
+- behavior: BehaviorAnonymousS3Burst
+  title: Burst of Anonymous Web-Based S3 Object Access from Single External IP
+- behavior: BehaviorAssumedRoleAccountAudit
+  title: Discovery – Cross-Account AWS Assumed Role Policy Simulation and Evaluation
+- behavior: BehaviorCloudCidrAllocation
+  title: Cloud Network Address Space Management via EC2 IPAM Pool CIDR Allocation
+- behavior: BehaviorCredentialReportRetrieval
+  title: Discovery – IAM Credential Report Generation and Retrieval by AWS Principal
+- behavior: BehaviorEC2ReservationModification
+  title: Concentrated EC2 Capacity Reservation and Fleet Modifications by Assumed Role
+- behavior: BehaviorEbsEncryptionToggle
+  title: AWS Account Toggles EBS Default Volume Encryption Setting
+# ... (continues with all behavior names and titles)
 ```
 
 ## Notes
 
-- Behavior names are sorted alphabetically within each data source
+- Behavior entries are sorted alphabetically by behavior name within each data source
 - All behavior names follow the pattern `Behavior{DescriptiveName}`
-- Each file represents a complete list for that specific data source
+- Each behavior includes both the technical name and human-readable title
+- Titles provide clear descriptions of what each behavior detects
 - Total of 3 files instead of individual behavior YAML files
-- Simplified structure focused on behavior name organization by data source
+- Enhanced structure focused on behavior name and title organization by data source
