@@ -3,106 +3,285 @@ title: GCP Audit Logs Behaviors
 description: List of behavior detection rules for GCP Audit Logs data source
 totalBehaviors: 103
 behaviors:
-- BehaviorAnonymousMlflowRunCreation
-- BehaviorAutomationShutdown
-- BehaviorBackupExportCollection
-- BehaviorBackupRepoEnumeration
-- BehaviorBigQueryConfigEnumeration
-- BehaviorBigQueryPatchEvasion
-- BehaviorBulkBackupDeletion
-- BehaviorBulkExternalSecretsDeletion
-- BehaviorBulkGCPDeletion
-- BehaviorBulkInstanceProvisioning
-- BehaviorBulkNetworkDeletion
-- BehaviorCentralizedAssetEnumeration
-- BehaviorCloudDataExportSetup
-- BehaviorCloudFederationEnumeration
-- BehaviorCloudIdentityTenantEnumeration
-- BehaviorCloudInstanceRecreation
-- BehaviorCloudLoggingExportEnumeration
-- BehaviorCloudPubSubSubscriptionByDefaultServiceAccount
-- BehaviorCloudRecommendationEnumeration
-- BehaviorCloudRunJobBurst
-- BehaviorCloudStorageAclEnumeration
-- BehaviorCloudTagEnumeration
-- BehaviorClusteredAdminScopeChange
-- BehaviorConfigConnectorBurst
-- BehaviorContainerVulnEnumeration
-- BehaviorCoordinatedCloudVeleroDeletion
-- BehaviorCrossNamespaceIngressWatch
-- BehaviorCrossProjectProvisioning
-- BehaviorDatabaseBackupEnumeration
-- BehaviorDataprocEnumeration
-- BehaviorDataprocNodeBurst
-- BehaviorExternalKmsAccess
-- BehaviorExternalSecretCreation
-- BehaviorGCPProjectWideEnumeration
-- BehaviorGCPResourceCreation
-- BehaviorGKEConfigEnumeration
-- BehaviorGKEConfigSyncDiscovery
-- BehaviorGcpKeyDeletionEvasion
-- BehaviorGcsfuseBucketEnumeration
-- BehaviorGitOpsCRDDiscovery
-- BehaviorGitOpsMassResourcePatch
-- BehaviorGitOpsOperatorDiscovery
-- BehaviorGkeMultiClusterDiscovery
-- BehaviorGkeTrafficEnumeration
-- BehaviorHighFrequencyDnsDeletion
-- BehaviorHighVolumeKMSOperations
-- BehaviorIamAccountDiscovery
-- BehaviorIamRoleEnumeration
-- BehaviorIngressLeasePersistence
-- BehaviorInternalServicePolicyTag
-- BehaviorK8sAdmissionEnumeration
-- BehaviorK8sAppDeliveryDiscovery
-- BehaviorK8sPolicyEnumeration
-- BehaviorK8sPolicyModification
-- BehaviorK8sSecurityEnumeration
-- BehaviorK8sSecurityFleetDiscovery
-- BehaviorK8sTokenReuse
-- BehaviorKubeCustomScan
-- BehaviorKubectlServiceAccountWrite
-- BehaviorKubernetesCRDEnumeration
-- BehaviorKubernetesCloudTeardown
-- BehaviorKubernetesCrossplaneDiscovery
-- BehaviorKubernetesReplicaEnumeration
-- BehaviorKubernetesResourceEnumeration
-- BehaviorKyvernoUpdateRequestEnumeration
-- BehaviorMultipartUploadGCS
-- BehaviorMultipleIPAdminActivity
-- BehaviorMultipleUsersBackupAccess
-- BehaviorNetworkResourceDiscovery
-- BehaviorOrgPolicyClearGCP
-- BehaviorOsConfigEnumeration
-- BehaviorPodLogEnumeration
-- BehaviorPubSubAuditLogMetadataAccess
-- BehaviorPublicAccessK8sToken
-- BehaviorRapidIamModification
-- BehaviorRapidSSLCertCreation
-- BehaviorRapidSecretDestruction
-- BehaviorRepeatedBigQueryCancellations
-- BehaviorRepeatedWorkflowTaskResultDeletion
-- BehaviorRuntimeClassEnumeration
-- BehaviorSecretEnumeration
-- BehaviorSequentialIamPolicyRetrieval
-- BehaviorServerlessEnvironmentDiscovery
-- BehaviorServiceAccountAnalyticsDeletion
-- BehaviorServiceAccountDualResourcePolicyChange
-- BehaviorServiceAccountIamEnumeration
-- BehaviorServiceAccountKeyEnumeration
-- BehaviorServiceAccountPolicyChange
-- BehaviorServiceAccountRBACAdmin
-- BehaviorServiceAccountRunEnumeration
-- BehaviorServiceAccountWatch
-- BehaviorSharedIPEnumeration
-- BehaviorSparkPodProvisioning
-- BehaviorSubjectAccessReviewEnumeration
-- BehaviorTerraformIamModification
-- BehaviorUnattributedKubeStateEnumeration
-- BehaviorUserSuspensionNoClientMeta
-- BehaviorUserUnsuspendPhoneChange
-- BehaviorVeleroBackupDeletion
-- BehaviorVertexAIDeletion
-- BehaviorVpcSubnetworkProvisioning
-- BehaviorWebhookConfigReplace
-- BehaviorWorkloadIdentityEnumeration
+- behavior: BehaviorAnonymousMlflowRunCreation
+  title: 'Execution: Anonymous Browser-Based MLflow Run Creation via Kubernetes API'
+- behavior: BehaviorAutomationShutdown
+  title: Impact – Automation-Initiated Shutdown of Compute Engine Instances via Compute
+    API
+- behavior: BehaviorBackupExportCollection
+  title: Collection – Managed Service Data Extraction via Backup-Export Operations
+- behavior: BehaviorBackupRepoEnumeration
+  title: Collection – Cloud Storage Backup Repository Enumeration via Metadata Operations
+- behavior: BehaviorBigQueryConfigEnumeration
+  title: Discovery – BigQuery Configuration Metadata Enumeration by Single Principal
+- behavior: BehaviorBigQueryPatchEvasion
+  title: Defense Evasion via High-Frequency BigQuery Observability Table Patch Operations
+- behavior: BehaviorBulkBackupDeletion
+  title: Impact – Velero DeleteBackupRequest Bulk Modification by Backup Service Accounts
+- behavior: BehaviorBulkExternalSecretsDeletion
+  title: Defense Evasion – Kubernetes Namespace Controller Bulk Deletion of External
+    Secrets Resources
+- behavior: BehaviorBulkGCPDeletion
+  title: Impact – Kubernetes-Orchestrated Bulk Deletion of GCP Resources via Config
+    Connector
+- behavior: BehaviorBulkInstanceProvisioning
+  title: Cloud Compute Bulk Instance Provisioning by Service Account Using Zonal and
+    Regional APIs
+- behavior: BehaviorBulkNetworkDeletion
+  title: Defense Evasion – Bulk Deletion of Cloud Firewall, VPN, and Load Balancer
+    Resources
+- behavior: BehaviorCentralizedAssetEnumeration
+  title: Cloud Discovery – Centralized Asset Inventory Enumeration via Cloud Asset
+    APIs
+- behavior: BehaviorCloudDataExportSetup
+  title: Exfiltration – Managed Cloud Data Export Pipeline Configuration by Service
+    Account
+- behavior: BehaviorCloudFederationEnumeration
+  title: Identity Discovery – Combined Cloud Identity Toolkit Workload Identity Pool
+    Federation Configuration Enumeration
+- behavior: BehaviorCloudIdentityTenantEnumeration
+  title: Identity Discovery – Cloud Identity Toolkit Identity Provider Configuration
+    with Tenant Enumeration
+- behavior: BehaviorCloudInstanceRecreation
+  title: Defense Evasion – Automated Cloud Compute Instance Recreation via Repair
+    and Managed Instance Group APIs
+- behavior: BehaviorCloudLoggingExportEnumeration
+  title: Cloud Logging Export Configuration Enumeration by Service Account
+- behavior: BehaviorCloudPubSubSubscriptionByDefaultServiceAccount
+  title: Command and Control – Cloud Pub/Sub Subscription Creation via Compute Engine
+    Default Service Account
+- behavior: BehaviorCloudRecommendationEnumeration
+  title: Discovery – Cloud Recommender Recommendation Enumeration via Recommender
+    API by Single GCP Principal
+- behavior: BehaviorCloudRunJobBurst
+  title: 'Cloud Execution: Repeated Cloud Run Job Creation by Service Account from
+    External IP Address'
+- behavior: BehaviorCloudStorageAclEnumeration
+  title: 'Cloud Discovery: Principal Enumerates GCP Cloud Storage ACL Custom Resources
+    via Kubernetes API'
+- behavior: BehaviorCloudTagEnumeration
+  title: Discovery – Cloud Resource Tag Configuration Enumeration via Tag APIs
+- behavior: BehaviorClusteredAdminScopeChange
+  title: Concentrated Google Admin User Access Scope Reconfiguration
+- behavior: BehaviorConfigConnectorBurst
+  title: Impact – Config Connector Burst Reconfiguration of GCP Compute Network-Security
+    Resources
+- behavior: BehaviorContainerVulnEnumeration
+  title: Discovery – Container Analysis Vulnerability Occurrence Enumeration via Grafeas
+    ListOccurrences
+- behavior: BehaviorCoordinatedCloudVeleroDeletion
+  title: Impact – Coordinated Deletion of Cloud SQL Backup Runs and Kubernetes Velero
+    DeleteBackupRequests
+- behavior: BehaviorCrossNamespaceIngressWatch
+  title: Discovery – Cross-Namespace NGINX Ingress Policy Watch Operations by Kubernetes
+    Service Account
+- behavior: BehaviorCrossProjectProvisioning
+  title: Cloud Compute Cross-Project Instance Provisioning by Service Account via
+    API
+- behavior: BehaviorDatabaseBackupEnumeration
+  title: Discovery – Managed Database Backup Resource Enumeration Across GCP Projects
+- behavior: BehaviorDataprocEnumeration
+  title: Discovery – Dataproc Cluster Agent and Job Status Enumeration via AgentService
+    GetAgent and JobController GetJob
+- behavior: BehaviorDataprocNodeBurst
+  title: Resource Hijacking – Burst of Dataproc Node Group Creations via NodeGroupController
+    API
+- behavior: BehaviorExternalKmsAccess
+  title: Credential Access – Cloud KMS Key Read and Management Operations from External
+    IP Addresses
+- behavior: BehaviorExternalSecretCreation
+  title: Credential Access – Kubernetes ExternalSecret Resource Creation from Kubectl
+    Client
+- behavior: BehaviorGCPProjectWideEnumeration
+  title: Discovery – Single GCP Principal Enumerates Data Catalog, BigLake, BigQuery
+    Reservations, and Notebook Environments in One Project
+- behavior: BehaviorGCPResourceCreation
+  title: Resource Development – GCP Organization, Project, or Tag Creation via Cloud
+    Resource Manager
+- behavior: BehaviorGKEConfigEnumeration
+  title: Discovery – GKE ClusterPodMonitoring and ClusterNodeMonitoring Configuration
+    Enumeration in Kubernetes Cluster
+- behavior: BehaviorGKEConfigSyncDiscovery
+  title: Kubernetes Configuration Source Discovery via GKE ConfigSync RootSync Resources
+- behavior: BehaviorGcpKeyDeletionEvasion
+  title: Defense Evasion – Repeated GCP Service Account Key Deletions via gcloud CLI
+- behavior: BehaviorGcsfuseBucketEnumeration
+  title: Collection – Cloud Storage Bucket Layout Enumeration via gcsfuse by Single
+    GCP Principal
+- behavior: BehaviorGitOpsCRDDiscovery
+  title: Discovery – Kubernetes Application CRD Enumeration by Unattributed GitOps
+    Controller Client
+- behavior: BehaviorGitOpsMassResourcePatch
+  title: Execution – GitOps Controller Service Account Patching GitHub Actions Runner
+    Autoscaler, RunnerDeployment, and Namespace Resources
+- behavior: BehaviorGitOpsOperatorDiscovery
+  title: 'Discovery: GitOps Controller Enumeration of Confluent Kafka and F5 AppProtect
+    DoS Operator Resources'
+- behavior: BehaviorGkeMultiClusterDiscovery
+  title: Discovery – GKE Multi-Cluster Service Import and Ingress Configuration Enumeration
+    in Kubernetes Cluster
+- behavior: BehaviorGkeTrafficEnumeration
+  title: Discovery – GKE Load Balancer Traffic Policy Enumeration in Kubernetes Cluster
+- behavior: BehaviorHighFrequencyDnsDeletion
+  title: Defense Evasion via High-Frequency Cloud DNS Resource Record Set Deletions
+    by GKE Robot Service Accounts
+- behavior: BehaviorHighVolumeKMSOperations
+  title: Key Management – High-Volume Cloud KMS Cryptographic Operations by Service
+    Accounts
+- behavior: BehaviorIamAccountDiscovery
+  title: Cloud Account Discovery via Repeated IAM GetServiceAccount Operations on
+    Service Accounts
+- behavior: BehaviorIamRoleEnumeration
+  title: Permission Groups Discovery in GCP via IAM Role Listing and Grantable Role
+    Queries
+- behavior: BehaviorIngressLeasePersistence
+  title: Persistence via Update Operations on Kubernetes Ingress Controller Leader
+    Election Lease Objects
+- behavior: BehaviorInternalServicePolicyTag
+  title: Internal Network Service Account Administration of Cloud Data Catalog PolicyTagManager
+    Resources
+- behavior: BehaviorK8sAdmissionEnumeration
+  title: Discovery – Enumeration of Kubernetes Admission Control and Policy Configuration
+    by Cluster Service Account
+- behavior: BehaviorK8sAppDeliveryDiscovery
+  title: Discovery – Kubernetes Principal Enumeration of Application Delivery and
+    Autoscaling Configuration Resources
+- behavior: BehaviorK8sPolicyEnumeration
+  title: 'Security Policy Discovery: Principal Enumerates Kubernetes Gatekeeper Constraints
+    and Istio Authorization Policies'
+- behavior: BehaviorK8sPolicyModification
+  title: Defense Evasion – Kubernetes Security Policy Custom Resource Modification
+- behavior: BehaviorK8sSecurityEnumeration
+  title: Discovery – Kubernetes Security Posture Custom Resource Enumeration
+- behavior: BehaviorK8sSecurityFleetDiscovery
+  title: Discovery – Enumeration of Kubernetes Security, Fleet, and Observability
+    Custom Resources
+- behavior: BehaviorK8sTokenReuse
+  title: Credential Access – Kubernetes Service Account Token Reuse from Public and
+    In-Cluster IP Addresses
+- behavior: BehaviorKubeCustomScan
+  title: Discovery – Kubernetes Service Account Initiates Wiz Scanning via Custom
+    Resource Creation
+- behavior: BehaviorKubectlServiceAccountWrite
+  title: Lateral Movement – Kubectl Client Use of Kubernetes Service Account Credentials
+    for Kubernetes Resource Writes
+- behavior: BehaviorKubernetesCRDEnumeration
+  title: Discovery – Kubernetes API Extension Schema Enumeration via CustomResourceDefinitions
+- behavior: BehaviorKubernetesCloudTeardown
+  title: Impact – Kubernetes‑Orchestrated Deletion of Google Cloud Load Balancing
+    and Data Transfer Infrastructure
+- behavior: BehaviorKubernetesCrossplaneDiscovery
+  title: Discovery – Kubernetes Principal Enumeration of Crossplane Configuration
+    & Managed Cloud Resources
+- behavior: BehaviorKubernetesReplicaEnumeration
+  title: Discovery – Kubernetes Workload Replica/Revision Enumeration
+- behavior: BehaviorKubernetesResourceEnumeration
+  title: Discovery – Kubernetes Workload and Storage Resource Enumeration by Monitoring
+    Service Accounts
+- behavior: BehaviorKyvernoUpdateRequestEnumeration
+  title: Defense Discovery – Kyverno Policy Execution State Enumeration via UpdateRequest
+    Resources in Kubernetes
+- behavior: BehaviorMultipartUploadGCS
+  title: Multipart Object Upload Sequence to Google Cloud Storage by Service Account
+- behavior: BehaviorMultipleIPAdminActivity
+  title: IAM Admin Activity by a Single GCP Service Account From Multiple Source IP
+    Addresses
+- behavior: BehaviorMultipleUsersBackupAccess
+  title: Collection – Multiple Interactive GCP Users Access Cloud Storage Backup Buckets
+    and Managed Backup Folders
+- behavior: BehaviorNetworkResourceDiscovery
+  title: GKE Networking Control Plane Resource Discovery
+- behavior: BehaviorOrgPolicyClearGCP
+  title: Defense Evasion – GCP Organization Policy Constraint Cleared on Project via
+    Config Connector
+- behavior: BehaviorOsConfigEnumeration
+  title: Discovery – OSConfig API Enumeration of VM OS Inventories and Policy Assignments
+    by Single GCP Principal
+- behavior: BehaviorPodLogEnumeration
+  title: Collection – Kubernetes Pod Log Access Across Multiple Pods by a Single Principal
+- behavior: BehaviorPubSubAuditLogMetadataAccess
+  title: Collection – Pub/Sub Audit Log Subscription Metadata Access by Single GCP
+    Principal
+- behavior: BehaviorPublicAccessK8sToken
+  title: Credential Access – Public IP Access to Kubernetes Service Account Token
+    Secrets in System Namespaces
+- behavior: BehaviorRapidIamModification
+  title: Privilege Management – Rapid IAM Policy Changes Across Multiple GCP Resources
+    by Single Identity
+- behavior: BehaviorRapidSSLCertCreation
+  title: Credential Access – Rapid Compute Engine SSL Certificate Creation by Container
+    Engine Robot Accounts
+- behavior: BehaviorRapidSecretDestruction
+  title: Impact – Rapid Destruction of Cloud Secret Manager Secret Versions by Single
+    Principal
+- behavior: BehaviorRepeatedBigQueryCancellations
+  title: Impact – Repeated BigQuery Job Cancellations by GCP Principal
+- behavior: BehaviorRepeatedWorkflowTaskResultDeletion
+  title: Defense Evasion – Repeated DeleteCollection of Kubeflow Workflow Task Results
+    by Argo Workflow Controller Service Account
+- behavior: BehaviorRuntimeClassEnumeration
+  title: Discovery – RuntimeClass Configuration Enumeration via Kubernetes Principals
+- behavior: BehaviorSecretEnumeration
+  title: Credential Access – Secret Manager Secret Inventory Enumeration
+- behavior: BehaviorSequentialIamPolicyRetrieval
+  title: Cloud Discovery – Sequential IAM Policy Retrieval for Database Instance and
+    Child Resource by Same Principal
+- behavior: BehaviorServerlessEnvironmentDiscovery
+  title: Cloud Discovery – Serverless Execution Environment Enumeration via Sequential
+    List and Get Operations
+- behavior: BehaviorServiceAccountAnalyticsDeletion
+  title: Impact – Service Account Deletion of Cloud Analytics and Machine Learning
+    Resources
+- behavior: BehaviorServiceAccountDualResourcePolicyChange
+  title: Privilege Management – Service Account IAM Policy Changes on GCP Compute
+    Disk and Snapshot in Same Project
+- behavior: BehaviorServiceAccountIamEnumeration
+  title: Identity Discovery – Service Account Performs Cloud Asset IAM Policy Search
+    Across Multiple Projects
+- behavior: BehaviorServiceAccountKeyEnumeration
+  title: Credential Access – Service Account Key Listing Followed by Service Account
+    Enumeration by Same Principal
+- behavior: BehaviorServiceAccountPolicyChange
+  title: Privilege Management – Service Account IAM Policy Change on GCP Service Account
+    via IAM API
+- behavior: BehaviorServiceAccountRBACAdmin
+  title: Kubernetes Service Account Performing RBAC Role and High-Privilege Binding
+    Administration
+- behavior: BehaviorServiceAccountRunEnumeration
+  title: Cloud Discovery – Service Account Enumerating Cloud Run Services via Services.ListServices
+- behavior: BehaviorServiceAccountWatch
+  title: Credential Access – Targeted Watch Operations on Specific Kubernetes ServiceAccount
+    Resources
+- behavior: BehaviorSharedIPEnumeration
+  title: Discovery – Shared Client IP Enumerates Compute Subnet and Database Backup
+    Storage Bucket Across GCP Admin Accounts
+- behavior: BehaviorSparkPodProvisioning
+  title: Execution – Kubernetes Spark Application Pod and Service Provisioning Sequence
+- behavior: BehaviorSubjectAccessReviewEnumeration
+  title: Kubernetes Scheduler Permission Discovery via Repeated SubjectAccessReview
+    Creation
+- behavior: BehaviorTerraformIamModification
+  title: Privilege Management – Terraform-Orchestrated IAM Configuration Across GCP
+    Resources
+- behavior: BehaviorUnattributedKubeStateEnumeration
+  title: Collection – Unattributed Kube-State-Metrics Enumeration of Cluster Workload,
+    Storage, and Policy Resources
+- behavior: BehaviorUserSuspensionNoClientMeta
+  title: Account Management & Defense Evasion – Workspace User Suspension via Admin
+    API with Missing Client Metadata
+- behavior: BehaviorUserUnsuspendPhoneChange
+  title: Account Manipulation – GCP Directory User Unsuspension Followed by Phone
+    Number Change
+- behavior: BehaviorVeleroBackupDeletion
+  title: Impact – Velero Backup Deletion Followed by Delete-Request Resource Creation
+- behavior: BehaviorVertexAIDeletion
+  title: Impact – Terraform/Config Connector Service Account Deletion of Vertex AI
+    Index and Endpoint Resources via AI Platform API
+- behavior: BehaviorVpcSubnetworkProvisioning
+  title: VPC Network Creation Followed by Subnetwork Provisioning via Deployment Manager
+    Service Account
+- behavior: BehaviorWebhookConfigReplace
+  title: Kubernetes Mutating Admission Webhook Configuration In-Place Replacement
+- behavior: BehaviorWorkloadIdentityEnumeration
+  title: Identity Discovery – Workload Identity Pool and Provider Configuration Enumeration
+    by Same Principal
