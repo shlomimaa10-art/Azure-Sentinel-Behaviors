@@ -1,0 +1,9 @@
+dataSource: CommonSecurityLog
+title: CommonSecurityLog Behaviors
+description: List of behavior detection rules for CommonSecurityLog data source (CyberArk,
+  Palo Alto, etc.)
+totalBehaviors: 3
+behaviors:
+- BehaviorAccountOperationBurst
+- BehaviorCyberArkCredentialUse
+- BehaviorNonStandardWebExploit

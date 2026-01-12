@@ -1,0 +1,7 @@
+dataSource: AWSCloudTrail
+title: AWS CloudTrail Behaviors
+description: List of behavior detection rules for AWS CloudTrail data source
+totalBehaviors: 2
+behaviors:
+- BehaviorNetworkPathAnalysis
+- BehaviorRepeatedPasswordRetrieval
