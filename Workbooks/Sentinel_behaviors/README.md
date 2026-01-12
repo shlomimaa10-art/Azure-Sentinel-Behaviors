@@ -43,8 +43,8 @@ This helps you spot sophisticated tactics and procedures across sources.
 
 ## Contents
 
-- **Behaviors-rules/**: Directory containing individual YAML files for each behavior detection rule
-- **rules_format.md**: Documentation explaining the structure and format of each rule file
+- **Behaviors-rules/**: Directory containing markdown table files for each behavior detection rule organized by data source
+- **rules_format.md**: Documentation explaining the structure and format of each markdown file
 - **use_cases.md**: SOC personas and use case examples with KQL queries
 
 ## Supported Data Sources
